@@ -30,7 +30,11 @@
 			return;
 		}
 		
-		$sql = 'INSERT INTO images (username, imageLoc) VALUES ("'.$username.'", "'.$file.'")';
+		$sql = 'INSERT INTO images (username, imageLoc, mimeType) VALUES ("'.$username.'", "'.$file.'", "'.$mimeType.'")';
 		$link->query($sql);
 	}
+
+	echo '<script> alert("File Upload successful!"); </script>';
+	
+	echo "<script> window.location.replace('index.html') </script>";
 ?>
