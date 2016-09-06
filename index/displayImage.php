@@ -18,7 +18,17 @@
 		{
 			while ($row = $result->fetch_assoc())
 			{
-				echo '<img src="'.$row["imageLoc"].'" alt="Uploaded Image">';
+				$imageLoc = $row["imageLoc"];
+				$imageLocLen = strlen($imageLoc);
+								
+				if (($row["mimeType"] == "image/jpeg") or ($row["mimeType"] == "image/png"))
+				{
+					echo '<img src="'.$row["imageLoc"].'" alt="Uploaded Image">';
+				}
+				else
+				{
+					header("Location: ".$imageLoc);
+				}
 			}
 		}
 	}
