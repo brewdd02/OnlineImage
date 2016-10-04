@@ -1,0 +1,38 @@
+body {
+    background-image: url(../images/background.jpg);
+    margin: 0;
+    padding: 0 130px 0 130px;
+}
+
+header {
+    background-color: dodgerblue;
+    padding-top: 10px;
+}
+
+header > h1 {
+    padding-left: 50px;
+}
+
+header > hr {
+    padding: 0;
+    margin: 0;
+}
+
+nav > a {
+    padding: 10px 10px 10px 30px;
+}
+
+section {
+    padding-left: 10px;
+    background-color: lightblue;
+    padding-bottom: 100%;
+}
+
+section > #uploadImage {
+    padding-top: 30px;
+}
+
+footer {
+    background-color: dodgerblue;
+    text-align: center;
+}
