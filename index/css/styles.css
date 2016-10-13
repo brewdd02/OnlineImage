@@ -9,6 +9,11 @@ header {
     padding-top: 10px;
 }
 
+header > img {
+	height: 130px;
+	padding-left: 40px;
+}
+
 header > h1 {
     padding-left: 50px;
 }
