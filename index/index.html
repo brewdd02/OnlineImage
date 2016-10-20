@@ -4,17 +4,18 @@
 		<meta charset="UTF-8">
 		<title>Online Image</title>
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<script src="js/boxDrop.js"></script>
 	</head>
-	<body>
+	<body onload="Init()">
 		<header>
 			<img id="logo" src="images/logo.png" alt="logo">
-			<hr>
+			<!--<hr>
 			<nav>
 				<a href="">link1</a>
 				<a href="">link2</a>
 				<a href="">link3</a>
 				<a href="">link4</a>
-			</nav>
+			</nav>-->
 			<hr>
 		</header>
 		<section>
@@ -24,6 +25,8 @@
 				<br/>
 				Select image to upload:
 				<input type="file" name="fileToUpload" id="fileToUpload">
+				<input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+				<div id="filedrag">or drop files here</div>
 				<input type="submit" value="Upload Image" name="submit">
 			</form>
 			<br/>

@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background-color: dodgerblue;
+    background-color: #66b3ff;
     padding-top: 10px;
 }
 
@@ -29,6 +29,7 @@ nav > a {
 
 section {
     padding-left: 10px;
+	padding-right: 10px;
     background-color: lightblue;
     padding-bottom: 100%;
 }
@@ -37,7 +38,34 @@ section > #uploadImage {
     padding-top: 30px;
 }
 
+#filedrag
+{
+	display: none;
+	font-weight: bold;
+	text-align: center;
+	padding: 1em 0;
+	margin: 1em 0;
+	color: #555;
+	border: 2px dashed #555;
+	border-radius: 7px;
+	cursor: default;
+}
+
+#fileselect
+{
+	position: absolute;
+	visibility: hidden;
+}
+
+#filedrag.hover
+{
+	color: #f00;
+	border-color: #f00;
+	border-style: solid;
+	box-shadow: inset 0 3px 4px #888;
+}
+
 footer {
-    background-color: dodgerblue;
+    background-color: #66b3ff;
     text-align: center;
 }
