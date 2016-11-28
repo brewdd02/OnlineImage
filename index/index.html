@@ -3,8 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Online Image</title>
+		<link rel="stylesheet" type="text/css" href="css/dropzone.css">
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
-		<script src="js/boxDrop.js"></script>
+		<script src="js/dropzone.js"></script>
 	</head>
 	<body onload="Init()">
 		<header>
@@ -19,16 +20,7 @@
 			<hr>
 		</header>
 		<section>
-			<form id="uploadImage" action="uploadImage.php" method="post" enctype="multipart/form-data">
-				Input a username:
-				<input type="text" name="username" id="username">
-				<br/>
-				Select image to upload:
-				<input type="file" name="fileToUpload" id="fileToUpload">
-				<input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
-				<div id="filedrag">or drop files here</div>
-				<input type="submit" value="Upload Image" name="submit">
-			</form>
+			<form action="/upload-target" class="dropzone"></form>
 			<br/>
 			<br/>
 			<form id="displayImage" action="displayImage.php" method="post">

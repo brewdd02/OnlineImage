@@ -1,3 +1,5 @@
+var files;
+
 // initialize
 function Init() 
 {
@@ -5,7 +7,7 @@ function Init()
 	{
 		var fileselect = document.getElementById("fileselect");
 		var	filedrag = document.getElementById("filedrag");
-		var	submitbutton = document.getElementById("submitbutton");
+		var	submitbutton = document.getElementById("submit");
 
 		// file select
 		fileselect.addEventListener("change", FileSelectHandler, false);
@@ -21,7 +23,7 @@ function Init()
 			filedrag.style.display = "block";
 			
 			// remove submit button
-			submitbutton.style.display = "none";
+			//submitbutton.style.display = "none";
 		}
 	}
 }
@@ -41,7 +43,15 @@ function FileSelectHandler(e)
 	FileDragHover(e);
 
 	// fetch FileList object
-	var files = e.target.files || e.dataTransfer.files;
+	files = e.target.files || e.dataTransfer.files;
 
 	document.getElementById("filedrag").innerHTML =  files.length + " file(s) selected";
+}
+
+function uploadFile()
+{
+	var xhr = new XMLHttpRequest();
+	//alert(files[0].name);
+	xhr.open("POST", "../uploadImage.php", true);
+	xhr.send(files)
 }
