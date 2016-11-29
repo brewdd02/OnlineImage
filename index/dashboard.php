@@ -20,7 +20,8 @@
 			<hr>
 		</header>
 		<section>
-			<form action="/upload-target" class="dropzone"></form>
+			<form action="uploadImage.php" class="dropzone" method="post" enctype="multipart/form-data">
+			</form>
 			<br/>
 			<br/>
 			<form id="displayImage" action="displayImage.php" method="post">
