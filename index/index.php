@@ -50,7 +50,7 @@
 		} else {
 			//or login
 			if (login_user($user, $pass)) {
-				refresh('dashboard.php'); //move to dashboard
+				refresh('dashboard.html'); //move to dashboard
 				printf('Logged in as %s.', $user, $pass);
 			} else {
 				refresh();
