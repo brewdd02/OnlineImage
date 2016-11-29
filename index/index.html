@@ -2,25 +2,18 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Online Image</title>
+		<title>BoxDrop</title>
 		<link rel="stylesheet" type="text/css" href="css/dropzone.css">
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 		<script src="js/dropzone.js"></script>
 	</head>
-	<body onload="Init()">
+	<body>
 		<header>
 			<img id="logo" src="images/logo.png" alt="logo">
-			<!--<hr>
-			<nav>
-				<a href="">link1</a>
-				<a href="">link2</a>
-				<a href="">link3</a>
-				<a href="">link4</a>
-			</nav>-->
 			<hr>
 		</header>
 		<section>
-			<form action="/upload-target" class="dropzone"></form>
+			<form action="upload.php" class="dropzone"></form>
 			<br/>
 			<br/>
 			<form id="displayImage" action="displayImage.php" method="post">
