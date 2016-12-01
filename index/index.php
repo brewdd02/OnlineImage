@@ -90,29 +90,12 @@
 		<section id="login">
 			<?php
 				$isLoggedIn = isset($_SESSION["uid"]);
-				if ($isLoggedIn):
+				if ($isLoggedIn) {
+					include('template/login_already.php');
+				} else {
+					include('template/login_form.php');
+				}
 			?>
-			<!-- logged in -->
-			<h2>You are logged in as <?php echo getUsername(); ?>.</h2>
-			<a href="dashboard.php">Go to Dashboard</a>
-			<?php else: ?>
-			<!-- not logged in -->
-			<h1>Login</h1>
-			<form method="post">
-				<div>
-					<label for="username">Username</label>
-					<input name="username" type="text" />
-				</div>
-				<div>
-					<label for="password">Password</label>
-					<input name="password" type="text" />
-				</div>
-				<div>
-					<input type="submit" name="register" value="register" />
-					<input type="submit" name="login" value="login" />
-				</div>
-			</form>
-			<?php endif ?>
 		</section>
 		<footer>
 			Created for CS372<br>
