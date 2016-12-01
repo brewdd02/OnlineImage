@@ -87,6 +87,17 @@
 	</head>
 	<body>
 		<?php include("header.php"); ?>
+		<?php
+			$isLoggedIn = isset($_SESSION["uid"]);
+			if ($isLoggedIn):
+		?>
+		<!-- logged in -->
+		<section id="login">
+			<h2>You are logged in as <?php echo getUsername(); ?>.</h2>
+			<a href="dashboard.php">Go to Dashboard</a>
+		</section>
+		<?php else: ?>
+		<!-- not logged in -->
 		<section id="login">
 			<h1>Login</h1>
 			<form method="post">
@@ -104,6 +115,7 @@
 				</div>
 			</form>
 		</section>
+		<?php endif ?>
 		<footer>
 			Created for CS372<br>
 			Fall 2016
