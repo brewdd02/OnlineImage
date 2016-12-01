@@ -1,14 +1,13 @@
 body {
-    /*background-image: url(../images/background.jpg);*/
-    margin: 0;
-    padding: 0 70px 0 70px;
-	background-attachment: fixed;
-	background-color: #03a9f4;
+	/* background-image: url(../images/background.jpg); */
+	margin: 0;
+	padding: 0 45px 0 45px;
+	background-color: #03A9F4;
 }
 
 header {
-    background-color: #50565d;
-    padding-top: 10px;
+	background-color: #50565d;
+	padding-top: 10px;
 }
 
 header > img {
@@ -17,37 +16,93 @@ header > img {
 }
 
 header > h1 {
-    padding-left: 50px;
+	padding-left: 50px;
 }
 
 header > hr {
-    padding: 0;
-    margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 nav > a {
-    padding: 10px 10px 10px 30px;
+	padding: 10px 10px 10px 30px;
 }
 
 section {
-    padding-left: 10px;
+	padding-left: 10px;
 	padding-right: 10px;
 	padding-top: 10px;
-    background-color: #2d2d2d;
-    padding-bottom: 100%;
-	color: #9e9e9e;
+	background-color: #2d2d2d;
+	padding-bottom: 100%;
+}
+
+#delete {
+	
+}
+
+section > #fileList {
+	border-collapse: collapse;
+	width: 90%;
+	text-align: center;
+}
+
+section > th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+#head {
+	background-color: #50565d;
+	padding: 15px;
+	text-align: left;
+	font-size: 25px;
 	font-family: "Comic Sans MS", cursive, sans-serif;
+	color: #9E9E9E;
 }
 
-section#login {
-	padding-right: 220px;
-	padding-top: 200px;
-	text-align: right;
-	position: static;
+#firstCol {
+	text-align: left;padding-left: 10px;
 }
 
-section > #uploadImage {
-    padding-top: 30px;
+#secCol, #thirdCol {
+    text-align: center;
+}
+
+#fourthCol {
+    text-align: right;
+    padding-right: 10px;
+}
+
+#last {
+    background-color: #50565d;
+    border-radius: 12px;
+}
+
+tr {
+	background-color: #ababab;
+	color: #2d2d2d;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size: 20px;
+}
+
+tr:nth-child(odd) {
+	background-color: #cecece;
+}
+
+#first:hover {
+	background-color: #e20048 !important;
+}
+
+#second:hover {
+	background-color: #6be400 !important;
+}
+
+#third:hover {
+	background-color: #ff7800 !important;
+}
+
+#fourth:hover {
+	background-color: #028e9b !important;
 }
 
 .dropzone {
@@ -58,15 +113,10 @@ section > #uploadImage {
 	background-color: inherit;
 }
 
-.dropzone .dz-message {
-	text-transform: uppercase;
-}
-
 .dropzone.dz-drag-hover {
 	color: red;
 	border-color: red;
 	border-style: solid;
-	box-shadow: inset 0 3px 4px #888;
 }
 
 .dropzone.dz-drag-hover .dz-message {
@@ -83,6 +133,6 @@ section > #uploadImage {
 }
 
 footer {
-    background-color: #50565d;
-    text-align: center;
+	background-color: #50565d;
+	text-align: center;
 }
