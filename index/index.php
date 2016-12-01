@@ -22,7 +22,12 @@
 			return false;
 		}
 		//returns true if passwords match
-		return password_verify($pass, $rPass);
+		$goodpass = password_verify($pass, $rPass);
+		if ($goodpass) {
+			$_SESSION["uid"] = $rId;
+			return true;
+		}
+		return false;
 	}
 
 	//register or login
@@ -58,6 +63,9 @@
 			}
 		}
 	}
+
+	//create/load a session
+	session_start();
 
 	$isPOST = $_SERVER['REQUEST_METHOD'] === "POST";
 	if ($isPOST) {
