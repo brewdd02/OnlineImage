@@ -71,9 +71,9 @@
 	session_start();
 
 	$isPOST = $_SERVER['REQUEST_METHOD'] === "POST";
-	if ($isPOST) {
+	if ($isPOST):
 		try_post_index();
-	} else {
+	else:
 ?>
 
 <!DOCTYPE html>
@@ -103,6 +103,4 @@
 		</footer>
 	</body>
 </html>
-<?php
-}
-?>
+<?php endif ?>
