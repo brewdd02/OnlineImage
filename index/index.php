@@ -5,19 +5,19 @@
 	}
 
 	function register_user($user, $pass) {
-		$db = new mysqli("localhost", "root", "", "boxdrop");
-		$stAddUser = $db->prepare("INSERT INTO Users(username, password) VALUES (?, ?)");
+		$db = new mysqli("localhost", "root", "", "boxdrop") or die(mysqli_error($db));
+		$stAddUser = $db->prepare("INSERT INTO users(username, password) VALUES (?, ?)") or die(mysqli_error($db));
 		$hashed = password_hash($pass, PASSWORD_DEFAULT);
-		$stAddUser->bind_param("ss", $user, $hashed);
-		$stAddUser->execute();
+		$stAddUser->bind_param("ss", $user, $hashed) or die(mysqli_error($db));
+		$stAddUser->execute() or die(mysqli_error($db));
 	}
 
 	function login_user($user, $pass) {
-		$db = new mysqli("localhost", "root", "", "boxdrop");
-		$stGetUser = $db->prepare("SELECT id, password FROM Users WHERE username = (?) LIMIT 1");
-		$stGetUser->bind_param("s", $user);
-		$stGetUser->execute();
-		$stGetUser->bind_result($rId, $rPass);
+		$db = new mysqli("localhost", "root", "", "boxdrop") or die(mysqli_error($db));
+		$stGetUser = $db->prepare("SELECT id, password FROM users WHERE username = (?) LIMIT 1") or die(mysqli_error($db));
+		$stGetUser->bind_param("s", $user) or die(mysqli_error($db));
+		$stGetUser->execute() or die(mysqli_error($db));
+		$stGetUser->bind_result($rId, $rPass) or die(mysqli_error($db));
 		if (!$stGetUser->fetch()) {
 			return false;
 		}
