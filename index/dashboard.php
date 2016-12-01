@@ -4,13 +4,7 @@ session_start();
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>BoxDrop</title>
-		<link rel="stylesheet" type="text/css" href="css/dropzone.css">
-		<link rel="stylesheet" type="text/css" href="css/styles.css">
-		<script src="js/dropzone.js"></script>
-	</head>
+	<?php include('template/head.php'); ?>
 	<body>
 		<?php include("template/header.php"); ?>
 		<section>
