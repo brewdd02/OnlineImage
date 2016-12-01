@@ -86,10 +86,7 @@
 		<script src="js/dropzone.js"></script>
 	</head>
 	<body>
-		<header>
-			<img id="logo" src="images/logo.png" alt="logo">
-			<hr>
-		</header>
+		<?php include("header.php"); ?>
 		<section id="login">
 			<h1>Login</h1>
 			<form method="post">
