@@ -86,7 +86,7 @@
 		<script src="js/dropzone.js"></script>
 	</head>
 	<body>
-		<?php include("header.php"); ?>
+		<?php include("template/header.php"); ?>
 		<?php
 			$isLoggedIn = isset($_SESSION["uid"]);
 			if ($isLoggedIn):

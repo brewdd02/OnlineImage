@@ -12,7 +12,7 @@ session_start();
 		<script src="js/dropzone.js"></script>
 	</head>
 	<body>
-		<?php include("header.php"); ?>
+		<?php include("template/header.php"); ?>
 		<section>
 			<form action="upload.php" class="dropzone"></form>
 			<br/>
