@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,10 +12,7 @@
 		<script src="js/dropzone.js"></script>
 	</head>
 	<body>
-		<header>
-			<img id="logo" src="images/logo.png" alt="logo">
-			<hr>
-		</header>
+		<?php include("header.php"); ?>
 		<section>
 			<form action="upload.php" class="dropzone"></form>
 			<br/>
