@@ -55,7 +55,8 @@
 		} else {
 			//or login
 			if (login_user($user, $pass)) {
-				refresh('dashboard.html'); //move to dashboard
+				//uid session var is now set
+				refresh('dashboard.php'); //move to dashboard
 				printf('Logged in as %s.', $user, $pass);
 			} else {
 				refresh();
