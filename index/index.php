@@ -79,7 +79,7 @@
 			<img id="logo" src="images/logo.png" alt="logo">
 			<hr>
 		</header>
-		<section>
+		<section id="login">
 			<h1>Login</h1>
 			<form method="post">
 				<div>
