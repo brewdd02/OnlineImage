@@ -22,9 +22,6 @@ session_start();
 				<input type="submit" value="View images" name="submit">
 			</form>
 		</section>
-		<footer>
-			Created for CS372<br>
-			Fall 2016
-		</footer>
+		<?php include('template/footer.php'); ?>
 	</body>
 </html>

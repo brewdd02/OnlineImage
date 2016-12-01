@@ -97,10 +97,7 @@
 				}
 			?>
 		</section>
-		<footer>
-			Created for CS372<br>
-			Fall 2016
-		</footer>
+		<?php include('template/footer.php'); ?>
 	</body>
 </html>
 <?php endif ?>
