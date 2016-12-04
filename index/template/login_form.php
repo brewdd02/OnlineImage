@@ -6,7 +6,7 @@
 	</div>
 	<div>
 		<label for="password">Password</label>
-		<input name="password" type="text" />
+		<input name="password" type="password" />
 	</div>
 	<div>
 		<input type="submit" name="register" value="register" />

@@ -94,15 +94,15 @@ tr:nth-child(odd) {
 }
 
 #second:hover {
-	background-color: #6be400 !important;
-}
-
-#third:hover {
 	background-color: #ff7800 !important;
 }
 
-#fourth:hover {
+#third:hover {
 	background-color: #028e9b !important;
+}
+
+#fourth:hover {
+	background-color: #6be400 !important;
 }
 
 .dropzone {
