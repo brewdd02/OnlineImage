@@ -54,8 +54,13 @@ section {
 	width: 100%
 }
 
-#delete {
-	
+section > div#buttons {
+	text-align: center;
+}
+
+section > div#buttons > input#delete {
+	margin-left: 310px;
+	margin-right: 310px;
 }
 
 section > #fileList {

@@ -2,8 +2,8 @@
 <?php require("template/header.php"); ?>
 <section id="displayFile">
 	<?php 
-		$fileType = "text/plain"; //change this to the actual file type
-		$filePath = "test/hello.txt"; //change this to the actual file path
+		$fileType = "application/pdf"; //change this to the actual file type
+		$filePath = "test/a.pdf"; //change this to the actual file path
 		
 		if ($fileType == "image/jpeg" || $fileType == "image/gif" || $fileType == "image/png")
 		{
