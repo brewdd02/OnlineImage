@@ -8,11 +8,17 @@ body {
 header {
 	background-color: #50565d;
 	padding-top: 10px;
+	padding-bottom: 110px;
 }
 
 header > img {
 	height: 130px;
 	padding-left: 40px;
+	position: absolute;
+}
+
+#logout {
+	margin-left: 94%;
 }
 
 header > h1 {

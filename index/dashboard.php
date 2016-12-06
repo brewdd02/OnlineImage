@@ -77,9 +77,8 @@ require_once('getUserFiles.php');
 		<header style="">
 			<img id="logo" src="images/logo.png" alt="logo">
 			<form method="post" action="dashboard.php">
-			<input type="submit" name="logout" value="Log Out"/>
+			<input id="logout" type="submit" name="logout" value="Log Out"/>
 		</form>
-			<hr>
 		</header>
 		<section style="table align: center;">
 			
