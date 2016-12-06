@@ -18,7 +18,7 @@ header > img {
 }
 
 #logout {
-	margin-left: 94%;
+	margin-left: 93%;
 }
 
 header > h1 {
@@ -168,4 +168,5 @@ tr:nth-child(odd) {
 footer {
 	background-color: #50565d;
 	text-align: center;
+	color: white;
 }
