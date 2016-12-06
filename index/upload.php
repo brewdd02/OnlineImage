@@ -7,7 +7,7 @@
 		
 		$conn = connect();
 		
-		if(strtoupper(substr(PHP_OS, 0, 3)) === 'WIN')
+		if(getOS())
 		{
 			$username = getcwd() . "/" . getUsername();
 		}
@@ -28,15 +28,15 @@
 		$mimeType = $_FILES['file']['type'];
 		
 		
-		if(strtoupper(substr(PHP_OS, 0, 3)) === 'WIN')
+		if(getOS())
 		{
-			$targetDir = "" . getUsername() . "/" . $fileName;
-			$targetFile = getcwd() . "/" . $targetDir;
+			$targetDir = "" . $fileName;
+			$targetFile = getcwd() . "/" . getUsername() . "/" . $targetDir;
 		}
 		else
 		{
-			$targetDir = "" . getUsername() . DIRECTORY_SEPARATOR . $fileName;
-			$targetFile = getcwd() . DIRECTORY_SEPARATOR . $targetDir;
+			$targetDir = "" . $fileName;
+			$targetFile = getcwd() . DIRECTORY_SEPARATOR . getUsername() . DIRECTORY_SEPARATOR . $targetDir;
 		}
 		
 	

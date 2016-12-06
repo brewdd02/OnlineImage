@@ -10,6 +10,7 @@ require_once('getUserFiles.php');
 		header("Location:index.php");
 		exit;
 	}
+	
 	if (!isset($_SESSION['uid']))
 	{
 		header("Location:index.php");
@@ -22,48 +23,12 @@ require_once('getUserFiles.php');
 <html>
 	<?php include('template/head.php'); ?>
 	<body>
-		<script>
-		  $(document).ready(function(e)
-                {
-                    $("#search").keyup(function()
-                    {
-                        $("#fileList").show();
-                        var x = $(this).val();
-
-                        $.ajax(
-                            {
-                                type:'POST',
-                                url:'searchUserFiles.php',
-                                data: 'search='+x,
-                                beforeSend:function(){
-                                	$("#fileList").html("Searching . . .");
-                                },
-                                success:function(data)
-                                {
-                                    $("#fileList").html(data);
-                                }
-                                ,
-                });
-				
-			});
-		
-		});
-	</script>
-	<script>	
-		$("#fileList tr").click(function() {
-		  // get the value
-		  var value = $(this).find('td:first').text();
-		  // redirect the user with the value as a GET variable
-		  window.location = nextPage + '?file=' + value;
-		});
-	</script>
-	
-	
 		<header style="">
-			<img id="logo" src="images/logo.png" alt="logo">
+			<input type="image" id="logo" src="images/logo.png" alt="logo" onClick="window.location.reload()">
 			<form method="post" action="dashboard.php">
-			<input id="logout" class="btn btn-primary" type="submit" name="logout" value="Log Out"/>
-		</form>
+				<input id="logout" class="btn btn-primary" type="submit" name="logout" value="Log Out"/>
+			</form>
+			
 		</header>
 		<section style="table align: center;">
 			
@@ -73,7 +38,7 @@ require_once('getUserFiles.php');
 			
 			<div id="buttons">
 				<input type="image" id="upload" src="images/uploadcrop.png" onmouseover="this.src='images/uploadhovercrop.png'" onmouseout="this.src='images/uploadcrop.png'" style="width:13%" data-toggle="modal" data-target="#myModal">
-				<input type="image" id="delete" name="delete" src="images/d2crop.png" onmouseover="this.src='images/d2hcrop.png'" onmouseout="this.src='images/d2crop.png'" style="width:13%" onclick="deleteFiles()">
+				<input type="image" id="delete" name="delete" src="images/d2crop.png" onmouseover="this.src='images/d2hcrop.png'" onmouseout="this.src='images/d2crop.png'" style="width:13%" onClick="deleteFiles()">
 				<input type="image" id="download" src="images/downloadcrop.png" onmouseover="this.src='images/downloadhovercrop.png'" onmouseout="this.src='images/downloadcrop.png'" style="width:13%"  onclick="alert('hello');">
 			</div>
 			<!-- Modal -->
@@ -105,5 +70,51 @@ require_once('getUserFiles.php');
 			Created for CS372<br>
 			Fall 2016
 		</footer>
+		<script>
+		  $(document).ready(function(e)
+                {
+                
+                	$('#fileList tr').click(function() {
+        			
+        			var file = $(this).attr('value');
+        	
+        			window.location = "displayFile.php" + '?file=' + file;
+        
+   					 });
+    
+                    $("#search").keyup(function()
+                    {
+                        $("#fileList").show();
+                      
+                        var x = $(this).val();
+
+                        $.ajax(
+                            {
+                                type:'POST',
+                                url:'searchUserFiles.php',
+                                data: 'search='+x,
+                                beforeSend:function(){
+                                	$("#fileList").html("Searching . . .");
+                                },
+                                success:function(data)
+                                {
+    
+                                	$("#fileList").html(data);
+                                	
+                                	$('#fileList tr').click(function() {
+        		
+        							var file = $(this).attr('value');
+        		
+        							window.location = "displayFile.php" + '?file=' + file;
+        
+    								});
+                                    
+                                } ,
+                });
+				
+			});
+		
+		});
+	</script>
 	</body>
 </html>

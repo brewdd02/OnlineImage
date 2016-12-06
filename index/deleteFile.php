@@ -20,7 +20,12 @@
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
 		
-		$fileLoc = $row['fileLoc'];
+		if(getOS()){
+			$fileLoc = getUsername() . "/" . $row['fileLoc'];
+		}
+		else{
+			$fileLoc = getUsername() . DIRECTORY_SEPARATOR . $row['fileLoc'];
+		}
 		
 		unlink($fileLoc);
 		

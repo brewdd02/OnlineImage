@@ -1,7 +1,7 @@
-<?php require_once("connectToDb.php"); ?>
-
+<?php require_once("connectToDb.php");?>
+	
 <header>
-	<img id="logo" src="images/logo.png" alt="logo">
+	<input type="image" id="logo" name="logo" src="images/logo.png" alt="logo" onClick="window.location.href = 'dashboard.php';"/>
 	<?php if (isset($_SESSION["uid"])): ?>
 	<!-- show username when logged in -->
 	<span>You are logged in as <?php echo getUsername(); ?></span>

@@ -24,13 +24,10 @@ function getAllUserFiles(){
 		$file= 1;
 		
 		while($info = $result->fetch_assoc()){
-		
-			//get just file name - hide user folder
-			$fileName = explode('/', $info["fileLoc"]);
 			
 			echo "<tr id=" . rowColor($file) . " value=". $info["id"]. ">" .
 			"<td><input type=\"checkbox\" name=\"num[]\" value=". $info["id"] ."/></td>" .
-			"<td id=\"firstCol\">" . $fileName[1] . 
+			"<td id=\"firstCol\">" . $info["fileLoc"] . 
 			"</td><td id=\"secCol\">" . $info["mimeType"] . 
 			"</td><td id=\"thirdCol\">" . $info["size"] . 
 			"</td><td id=\"fourthCol\">" . $info["date"] . "</td></tr>";
