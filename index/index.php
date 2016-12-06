@@ -80,7 +80,7 @@
 <html>
 	<?php include('template/head.php'); ?>
 	<body>
-		<?php include("template/header.php"); ?>
+		<?php include('template/header.php'); ?>
 		<section id="login">
 			<?php
 				$isLoggedIn = isset($_SESSION["uid"]);
