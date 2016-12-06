@@ -7,7 +7,16 @@
 		
 		$conn = connect();
 		
-		$username = getcwd() . DIRECTORY_SEPARATOR . "" . getUsername();
+		if(strtoupper(substr(PHP_OS, 0, 3)) === 'WIN')
+		{
+			$username = getcwd() . "/" . getUsername();
+		}
+		else
+		{
+			$username = getcwd() . DIRECTORY_SEPARATOR . "" . getUsername();
+		}
+		
+		
 		
 		if (!file_exists($username))
 		{
@@ -15,10 +24,21 @@
 		}
 		
 		$fileName = $_FILES['file']['name'];
-		$targetDir = "" . getUsername() . DIRECTORY_SEPARATOR . $fileName;
 		$fileSize = $_FILES['file']['size'];
-		$targetFile = getcwd().DIRECTORY_SEPARATOR.$targetDir;
 		$mimeType = $_FILES['file']['type'];
+		
+		
+		if(strtoupper(substr(PHP_OS, 0, 3)) === 'WIN')
+		{
+			$targetDir = "" . getUsername() . "/" . $fileName;
+			$targetFile = getcwd() . "/" . $targetDir;
+		}
+		else
+		{
+			$targetDir = "" . getUsername() . DIRECTORY_SEPARATOR . $fileName;
+			$targetFile = getcwd() . DIRECTORY_SEPARATOR . $targetDir;
+		}
+		
 	
 		if(move_uploaded_file($_FILES['file']['tmp_name'],$targetFile))
 		{
