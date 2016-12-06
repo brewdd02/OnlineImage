@@ -74,6 +74,10 @@ section > th, td {
 	padding: 8px;
 }
 
+#check1 {
+	margin-left: 8px;
+}
+
 #head {
 	background-color: #50565d;
 	padding: 15px;

@@ -49,7 +49,7 @@ function getAllUserFiles(){
 	function printTableHead(){
 	
 		echo "<tr id=\"head\">
-					<th style=\"/* color: #6be400; */border-radius: 12px 0 0 0;0: 0padding-left: 1;\" > <input type=\"checkbox\"/> </th>
+					<th style=\"/* color: #6be400; */border-radius: 12px 0 0 0;0: 0padding-left: 1;\" > <input id=\"check1\" type=\"checkbox\" onClick=\"toggle(this)\"/> </th>
 					<th id=\"firstCol\" >File Name</th>
 					<th id=\"secCol\" style=\"/* color: #ff7800; */\">Type</th>
 					<th id=\"thirdCol\">Size</th>
