@@ -11,14 +11,15 @@ header {
 	padding-bottom: 125px;
 }
 
-header > img {
+header > input#logo {
 	height: 130px;
 	padding-left: 40px;
 	position: absolute;
 }
 
 #logout {
-	margin-left: 93%;
+	margin-left: 86.5%;
+	position: absolute;
 }
 
 header > h1 {
