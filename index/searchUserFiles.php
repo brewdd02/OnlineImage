@@ -7,7 +7,7 @@ if(!empty($_POST['search'])){
 		
 		$connection = connect();
 		$search_term = $connection->real_escape_string($_POST['search']);
-		$sql = "SELECT * FROM files WHERE username ='" . getUsername() . "' AND fileLoc like '" . $search_term . "%'";
+		$sql = "SELECT * FROM files WHERE username ='" . getUsername() . "' AND fileLoc LIKE '%" . $search_term . "%'";
 		
 		printTableHead();
 		

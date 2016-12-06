@@ -1,4 +1,6 @@
 <?php
+
+	
 	function connect()
 	{
 		//database configuration

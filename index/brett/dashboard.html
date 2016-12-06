@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>BoxDrop</title>
+		<link rel="stylesheet" type="text/css" href="css/dropzone.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<script src="js/dropzone.js"></script>
+	</head>
+	<body>
+		<header style="">
+			<img id="logo" src="images/logo.png" alt="logo">
+			<hr>
+		</header>
+		<section style="table align: center;">
+			<input type="text" placeholder="Search" style="border-radius: 12px;margin-bottom: 50px;margin-left: 83%">
+			<br>
+			<br>
+			<div id="buttons">
+				<input type="image" id="upload" src="images/uploadcrop.png" onmouseover="this.src='images/uploadhovercrop.png'" onmouseout="this.src='images/uploadcrop.png'" style="width:13%" onclick="alert('hello');">
+				<input type="image" id="delete" src="images/d2crop.png" onmouseover="this.src='images/d2hcrop.png'" onmouseout="this.src='images/d2crop.png'" style="width:13%" onclick="alert('hello');">
+				<input type="image" id="download" src="images/downloadcrop.png" onmouseover="this.src='images/downloadhovercrop.png'" onmouseout="this.src='images/downloadcrop.png'" style="width:13%"  onclick="alert('hello');">
+			</div>
+			<table id="fileList" style="margin: auto;">
+				<tr id="head">
+					<th id="firstCol" style="/* color: #6be400; */border-radius: 12px 0 0 0;0: 0padding-left: 1;">File Name</th>
+					<th id="secCol" style="/* color: #ff7800; */">Type</th>
+					<th id="thirdCol">Size</th>
+					<th id="fourthCol" style="border-radius: 0 12px 0 0;">Date Uploaded</th>
+				</tr>
+				<tr id="first">
+					<td id="firstCol">1</td>
+					<td id="secCol">2</td>
+					<td id="thirdCol">3</td>
+					<td id="fourthCol">4</td>
+				</tr>
+				<tr id="second">
+					<td id="firstCol">5</td>
+					<td id="secCol">6</td>
+					<td id="thirdCol">7</td>
+					<td id="fourthCol">8</td>
+				</tr>
+				<tr id="third">
+					<td id="firstCol">9</td>
+					<td id="secCol">10</td>
+					<td id="thirdCol">11</td>
+					<td id="fourthCol">12</td>
+				</tr>
+                <tr id="fourth">
+					<td id="firstCol">13</td>
+					<td id="secCol">14</td>
+					<td id="thirdCol">15</td>
+					<td id="fourthCol">16</td>
+				</tr>
+                <tr id="last">
+                  <td style="border-radius: 0 0 0 12px;"></td>
+                  <td></td>
+                  <td></td>
+                  <td style="border-radius: 0 0 12px 0;"></td>
+                </tr>
+			</table>
+		</section>
+		<footer>
+			Created for CS372<br>
+			Fall 2016
+		</footer>
+	</body>
+</html>
