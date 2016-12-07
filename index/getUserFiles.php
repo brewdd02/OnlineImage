@@ -25,11 +25,13 @@ function getAllUserFiles(){
 		
 		while($info = $result->fetch_assoc()){
 			
+			$size = getFileSize($info["size"]);
+			
 			echo "<tr id=" . rowColor($file) . " value=". $info["id"]. ">" .
 			"<td><input type=\"checkbox\" name=\"num[]\" value=". $info["id"] ."/></td>" .
-			"<td id=\"firstCol\">" . $info["fileLoc"] . 
+			"<td id=\"firstCol\"><input type=\"submit\" id=\"column2\" name=\"" . $info["id"] . "\" value=\"" . $info["fileLoc"] . "\" onClick=\"displayFile(this)\">" . 
 			"</td><td id=\"secCol\">" . $info["mimeType"] . 
-			"</td><td id=\"thirdCol\">" . $info["size"] . 
+			"</td><td id=\"thirdCol\">" . $size . 
 			"</td><td id=\"fourthCol\">" . $info["date"] . "</td></tr>";
 			
 			
@@ -80,6 +82,32 @@ function getAllUserFiles(){
 			return "first";
 	}
 
+	function getFileSize($size){
+		
+		if ($size >= 1048576)
+        {
+            $size = number_format(($size / 1048576), 1) . ' MB';
+        }
+        elseif ($size >= 1024)
+        {
+            $size = number_format(($size / 1024), 1) . ' KB';
+        }
+        elseif ($size > 1)
+        {
+            $size = $size . ' Bytes';
+        }
+        elseif ($size == 1)
+        {
+            $size = $size . ' Byte';
+        }
+        else
+        {
+            $size = '0 bytes';
+        }
+
+        return $size;
+	
+	}
 
 
 ?>

@@ -7,33 +7,31 @@
 	$files = substr($_GET['filesToDelete'], 2);
 	
 	$ids = explode(", ", $files);
-	
-	print_r($ids);
-	
-	
 	$id = '';
 	$username = getUsername();
 	
-	foreach ($ids as $id)
-	{
-		$sql = "SELECT fileLoc FROM files WHERE id=".$id;
-		$result = $conn->query($sql);
-		$row = $result->fetch_assoc();
+		foreach ($ids as $id)
+		{
+			$sql = "SELECT fileLoc FROM files WHERE id=".$id;
+			$result = $conn->query($sql);
+			$row = $result->fetch_assoc();
 		
-		if(getOS()){
-			$fileLoc = getUsername() . "/" . $row['fileLoc'];
+			if(getOS()){
+				$fileLoc = $username . "/" . $row['fileLoc'];
+			}
+		
+			else{
+				$fileLoc = $username . DIRECTORY_SEPARATOR . $row['fileLoc'];
+			}
+		
+			unlink($fileLoc);
+		
+			$sql = "DELETE FROM files WHERE id=".$id;
+		
+			$result = $conn->query($sql);
 		}
-		else{
-			$fileLoc = getUsername() . DIRECTORY_SEPARATOR . $row['fileLoc'];
-		}
-		
-		unlink($fileLoc);
-		
-		$sql = "DELETE FROM files WHERE id=".$id;
-		
-		$result = $conn->query($sql);
-	}
 	
-	header("Location:dashboard.php");
+	
+		header("Location:dashboard.php");
 	
 ?>

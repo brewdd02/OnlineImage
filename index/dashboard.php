@@ -32,14 +32,14 @@ require_once('getUserFiles.php');
 		</header>
 		<section style="table align: center;">
 			
-			<input id="search" type="search" class="form-control" placeholder="Search for files" style="border-radius: 12px;margin-bottom: 50px;margin-left: 83%">
+			<input id="search" type="search" class="form-control" placeholder="Search for files" style="border-radius: 12px;margin-bottom: 50px;margin-left: 80%">
 			<br>
 			<br>
 			
 			<div id="buttons">
 				<input type="image" id="upload" src="images/uploadcrop.png" onmouseover="this.src='images/uploadhovercrop.png'" onmouseout="this.src='images/uploadcrop.png'" style="width:13%" data-toggle="modal" data-target="#myModal">
 				<input type="image" id="delete" name="delete" src="images/d2crop.png" onmouseover="this.src='images/d2hcrop.png'" onmouseout="this.src='images/d2crop.png'" style="width:13%" onClick="deleteFiles()">
-				<input type="image" id="download" src="images/downloadcrop.png" onmouseover="this.src='images/downloadhovercrop.png'" onmouseout="this.src='images/downloadcrop.png'" style="width:13%"  onclick="alert('hello');">
+				<input type="image" id="download" src="images/downloadcrop.png" onmouseover="this.src='images/downloadhovercrop.png'" onmouseout="this.src='images/downloadcrop.png'" style="width:13%"  onclick="downloadFiles()">
 			</div>
 			<!-- Modal -->
 			<div class="modal fade" id="myModal" role="dialog">
@@ -73,15 +73,6 @@ require_once('getUserFiles.php');
 		<script>
 		  $(document).ready(function(e)
                 {
-                
-                	$('#fileList #firstCol').click(function() {
-        			
-        			var file = $(this).attr('value');
-        	
-        			window.location = "displayFile.php" + '?file=' + file;
-        
-   					 });
-    
                     $("#search").keyup(function()
                     {
                         $("#fileList").show();
@@ -100,21 +91,13 @@ require_once('getUserFiles.php');
                                 {
     
                                 	$("#fileList").html(data);
-                                	
-                                	$('#fileList tr').click(function() {
-        		
-        							var file = $(this).attr('value');
-        		
-        							window.location = "displayFile.php" + '?file=' + file;
-        
-    								});
                                     
-                                } ,
-                });
+                            } ,
+                		});
 				
-			});
+					});
+				});
 		
-		});
 	</script>
 	</body>
 </html>

@@ -28,7 +28,7 @@ h1 {
 }
 
 #logout {
-	margin-left: 85%;
+	margin-left: 82%;
 	position: absolute;
 	background-color: #028E9B;
 	border-radius: 12px;
@@ -105,10 +105,14 @@ section > div#buttons {
 }
 
 section > div#buttons > input#delete {
-	margin-left: 310px;
-	margin-right: 310px;
+	margin-left: 290px;
+	margin-right: 265px;
 }
 
+section > div#buttons > input#upload {
+	margin-left: 0px;
+}
+ 
 section > #fileList {
 	border-collapse: collapse;
 	width: 90%;
@@ -131,6 +135,11 @@ section > th, td {
 	font-size: 25px;
 	font-family: "Comic Sans MS", cursive, sans-serif;
 	color: #9E9E9E;
+}
+
+#column2 {
+	background:rgba(0,0,0,0);
+	border:none;
 }
 
 #firstCol {

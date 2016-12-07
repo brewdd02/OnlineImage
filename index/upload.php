@@ -26,28 +26,37 @@
 		$fileName = $_FILES['file']['name'];
 		$fileSize = $_FILES['file']['size'];
 		$mimeType = $_FILES['file']['type'];
+		$file = $username .  $fileName;
 		
-		
-		if(getOS())
+		if (file_exists($file))
 		{
-			$targetDir = "" . $fileName;
-			$targetFile = getcwd() . "/" . getUsername() . "/" . $targetDir;
+			die('File already exists!');
 		}
+		
 		else
 		{
-			$targetDir = "" . $fileName;
-			$targetFile = getcwd() . DIRECTORY_SEPARATOR . getUsername() . DIRECTORY_SEPARATOR . $targetDir;
-		}
+		
+			if(getOS())
+			{
+				$targetDir = "" . $fileName;
+				$targetFile = getcwd() . "/" . getUsername() . "/" . $targetDir;
+			}	
+			else
+			{
+				$targetDir = "" . $fileName;
+				$targetFile = getcwd() . DIRECTORY_SEPARATOR . getUsername() . DIRECTORY_SEPARATOR . $targetDir;
+			}
 		
 	
-		if(move_uploaded_file($_FILES['file']['tmp_name'],$targetFile))
-		{
-			$sql = "INSERT INTO `files` (`id`, `username`, `fileLoc`, `mimeType`, `size`) VALUES ('','". getUsername() ."', '".$targetDir."', '".$mimeType."',
-					'". $fileSize . "')";
-			//insert file information into db table
-			$conn->query($sql);
-		}
+			if(move_uploaded_file($_FILES['file']['tmp_name'],$targetFile))
+			{
+				$sql = "INSERT INTO `files` (`id`, `username`, `fileLoc`, `mimeType`, `size`) VALUES ('','". getUsername() ."', '".$targetDir."', '".$mimeType."',
+						'". $fileSize . "')";
+				//insert file information into db table
+				$conn->query($sql);
+			}
 		
+		}
 		$conn->close();
 	}
 ?>
