@@ -5,28 +5,26 @@
 	if(!empty($_FILES))
 	{
 		
-		$conn = connect();
-		
 		if(getOS())
 		{
-			$username = getcwd() . "/" . getUsername();
+			$userpath = getcwd() . "/" . getUsername() . "/";
 		}
 		else
 		{
-			$username = getcwd() . DIRECTORY_SEPARATOR . "" . getUsername();
+			$userpath = getcwd() . DIRECTORY_SEPARATOR . "" . getUsername() . DIRECTORY_SEPARATOR;
 		}
 		
 		
 		
-		if (!file_exists($username))
+		if (!file_exists($userpath))
 		{
-			mkdir($username);
+			mkdir($userpath);
 		}
 		
 		$fileName = $_FILES['file']['name'];
 		$fileSize = $_FILES['file']['size'];
 		$mimeType = $_FILES['file']['type'];
-		$file = $username .  $fileName;
+		$file =  $userpath . $fileName;
 		
 		if (file_exists($file))
 		{
@@ -35,28 +33,19 @@
 		
 		else
 		{
-		
-			if(getOS())
-			{
-				$targetDir = "" . $fileName;
-				$targetFile = getcwd() . "/" . getUsername() . "/" . $targetDir;
-			}	
-			else
-			{
-				$targetDir = "" . $fileName;
-				$targetFile = getcwd() . DIRECTORY_SEPARATOR . getUsername() . DIRECTORY_SEPARATOR . $targetDir;
-			}
-		
-	
+			$targetDir = "" . $fileName;
+			$targetFile = $userpath . $targetDir;
+			
 			if(move_uploaded_file($_FILES['file']['tmp_name'],$targetFile))
 			{
+				$conn = connect();
 				$sql = "INSERT INTO `files` (`id`, `username`, `fileLoc`, `mimeType`, `size`) VALUES ('','". getUsername() ."', '".$targetDir."', '".$mimeType."',
 						'". $fileSize . "')";
 				//insert file information into db table
 				$conn->query($sql);
 			}
 		
+			$conn->close();
 		}
-		$conn->close();
 	}
 ?>
