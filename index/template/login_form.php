@@ -10,8 +10,20 @@
 		</div>
 		<br>
 		<div>
-			<input type="submit" id="loginBtn" class="btn btn-primary" name="login" value="Login" />
 			<input type="submit" id="registerBtn" class="btn btn-primary" name="register" value="Register" />
+			<input type="submit" id="loginBtn" class="btn btn-primary" name="login" value="Login" />
 		</div>
 	</div>
 </form>
+
+<script>
+	$(document).ready(function() {
+	  $(window).keydown(function(event){
+		if(event.keyCode == 13) {
+		  event.preventDefault();
+		  $('#loginBtn').click();
+		  return false;
+		}
+	  });
+	});
+</script>
