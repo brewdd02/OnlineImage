@@ -8,10 +8,21 @@
 
 	function register_user($user, $pass) {
 		$db = connect() or die(mysqli_error($db));
-		$stAddUser = $db->prepare("INSERT INTO users(username, password) VALUES (?, ?)") or die(mysqli_error($db));
-		$hashed = password_hash($pass, PASSWORD_DEFAULT);
-		$stAddUser->bind_param("ss", $user, $hashed) or die(mysqli_error($db));
-		$stAddUser->execute() or die(mysqli_error($db));
+		
+		$result = $db->query("SELECT username FROM users WHERE username='".$db->real_escape_string($user)."'");
+		$row = $result->fetch_assoc();
+		if (empty($row['username']))
+		{
+			$stAddUser = $db->prepare("INSERT INTO users(username, password) VALUES (?, ?)") or die(mysqli_error($db));
+			$hashed = password_hash($pass, PASSWORD_DEFAULT);
+			$stAddUser->bind_param("ss", $user, $hashed) or die(mysqli_error($db));
+			$stAddUser->execute() or die(mysqli_error($db));
+			printf("Account Successfully Created");
+		}
+		else
+		{
+			printf("User %s already exists.", $user);
+		}
 	}
 
 	function login_user($user, $pass) {
@@ -53,7 +64,6 @@
 			//register
 			register_user($user, $pass);
 			refresh();
-			echo '<span id="created">Account Successfully Created</span>';
 		} else {
 			//or login
 			if (login_user($user, $pass)) {

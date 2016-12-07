@@ -60,8 +60,6 @@ function downloadFiles()
 
 function displayFile(button)
 {
-	debugger;
-	
 	var file = button.name;
 	
 	window.location = "displayFile.php" + "?file=" + file;

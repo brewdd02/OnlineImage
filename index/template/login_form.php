@@ -10,8 +10,8 @@
 		</div>
 		<br>
 		<div>
-			<input type="submit" id="registerBtn" class="btn btn-primary" name="register" value="Register" />
 			<input type="submit" id="loginBtn" class="btn btn-primary" name="login" value="Login" />
+			<input type="submit" id="registerBtn" class="btn btn-primary" name="register" value="Register" />
 		</div>
 	</div>
 </form>
