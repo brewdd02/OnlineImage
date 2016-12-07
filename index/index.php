@@ -53,13 +53,13 @@
 			//register
 			register_user($user, $pass);
 			refresh();
-			printf('User %s created with password %s.', $user, $pass);
+			echo '<span id="created">Account Successfully Created</span>';
 		} else {
 			//or login
 			if (login_user($user, $pass)) {
 				//uid session var is now set
 				refresh('dashboard.php'); //move to dashboard
-				printf('Logged in as %s.', $user, $pass);
+				printf('Logging in as %s.', $user, $pass);
 			} else {
 				refresh();
 				printf('Bad username/password.');

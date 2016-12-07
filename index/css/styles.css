@@ -124,6 +124,13 @@ section > th, td {
 	padding: 8px;
 }
 
+#logged-in-status {
+	text-align: center;
+	color: white;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size: 23px;
+}
+
 #check1 {
 	margin-left: 8px;
 }
