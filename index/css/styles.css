@@ -21,6 +21,12 @@ h1 {
 	font-family: "Comic Sans MS", cursive, sans serif;
 }
 
+#search {
+	width: 200px;
+	font-family: "Comic Sans MS", cursive, sans serif;
+	font-size: 16px;
+}
+
 #logout {
 	margin-left: 85%;
 	position: absolute;

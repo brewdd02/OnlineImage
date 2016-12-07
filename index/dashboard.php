@@ -32,7 +32,7 @@ require_once('getUserFiles.php');
 		</header>
 		<section style="table align: center;">
 			
-			<input id="search" type="search" placeholder="Search for files" style="border-radius: 12px;margin-bottom: 50px;margin-left: 83%">
+			<input id="search" type="search" class="form-control" placeholder="Search for files" style="border-radius: 12px;margin-bottom: 50px;margin-left: 83%">
 			<br>
 			<br>
 			
