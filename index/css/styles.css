@@ -2,7 +2,7 @@ body {
 	/* background-image: url(../images/background.jpg); */
 	margin: 0;
 	padding: 0 45px 0 45px;
-	background-color: #03A9F4;
+	background-color: #028E9B;
 }
 
 header {
@@ -17,10 +17,29 @@ header > input#logo {
 	position: absolute;
 }
 
-#logout {
-	margin-left: 86.5%;
-	position: absolute;
+h1 {
+	font-family: "Comic Sans MS", cursive, sans serif;
 }
+
+#logout {
+	margin-left: 85%;
+	position: absolute;
+	background-color: #028E9B;
+	border-radius: 12px;
+	font-family: "Comic Sans MS", cursive, sans serif;
+	font-size: 20px;
+}
+
+#registerBtn, #loginBtn {
+	background-color: #028E9B;
+}
+
+#username, #password, #registerBtn, #loginBtn {
+	font-family: "Comic Sans MS", cursive, sans serif;
+	font-size: 16px;
+	border-radius: 12px;
+}
+
 
 header > h1 {
 	padding-left: 50px;
