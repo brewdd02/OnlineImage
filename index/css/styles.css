@@ -178,6 +178,22 @@ tr:nth-child(odd) {
 	background-color: #6be400 !important;
 }
 
+.modal-header {
+	background-color: #50565D;
+	color: white;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.modal-body {
+	background-color: #ABABAB;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.modal-footer {
+	background-color: #50565D;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
 .dropzone {
 	font-weight: bold;
 	text-align: center;
