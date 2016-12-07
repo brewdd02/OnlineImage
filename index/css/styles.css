@@ -43,6 +43,20 @@ section {
 	padding-bottom: 100%;
 }
 
+#outer {
+	border: solid;
+	padding: 10px;
+	border-radius: 12px;
+	background-color: #50565d;
+}
+
+#login {
+	text-align: center;
+	padding-left: 40%;
+	padding-right: 40%;
+	color: white;
+}
+
 #displayFile {
 	padding: 10px;
 }

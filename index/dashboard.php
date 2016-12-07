@@ -74,7 +74,7 @@ require_once('getUserFiles.php');
 		  $(document).ready(function(e)
                 {
                 
-                	$('#fileList tr').click(function() {
+                	$('#fileList #firstCol').click(function() {
         			
         			var file = $(this).attr('value');
         	
