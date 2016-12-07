@@ -4,6 +4,7 @@
 	
 	if(!empty($_FILES))
 	{
+		$conn = connect();
 		
 		if(getOS())
 		{
@@ -21,7 +22,7 @@
 			mkdir($userpath);
 		}
 		
-		$fileName = $_FILES['file']['name'];
+		$fileName = $conn->real_escape_string($_FILES['file']['name']);
 		$fileSize = $_FILES['file']['size'];
 		$mimeType = $_FILES['file']['type'];
 		$file =  $userpath . $fileName;
@@ -38,7 +39,7 @@
 			
 			if(move_uploaded_file($_FILES['file']['tmp_name'],$targetFile))
 			{
-				$conn = connect();
+				
 				$sql = "INSERT INTO `files` (`id`, `username`, `fileLoc`, `mimeType`, `size`) VALUES ('','". getUsername() ."', '".$targetDir."', '".$mimeType."',
 						'". $fileSize . "')";
 				//insert file information into db table
