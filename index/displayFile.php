@@ -15,22 +15,32 @@
 		$row = $file->fetch_assoc();
 		
 		$fileType = $row['mimeType']; 
-		$filePath = $row['fileLoc']; 
+		
+		if(getOS())
+		{
+			$filePath = getUsername() . "/" . $row['fileLoc']; 
+		}
+		
+		else
+		{
+			$filePath = getUsername() . DIRECTORY_SEPARATOR . $row['fileLoc'];
+		}
 		
 		if ($fileType == "text/php")
 		{
-			$fileToCopy = getUsername() . "/" . $filePath;
 			$fileToShow = "admin/phpFile/show.txt";
-			copy($fileToCopy, $fileToShow);
+			copy($filePath, $fileToShow);
 			echo "<iframe id='userFile' src='" . $fileToShow . "'></iframe>";
 		}
+		
 		else if ($fileType == "image/jpeg" || $fileType == "image/gif" || $fileType == "image/png")
 		{
-		   echo "<img id='userImg' src='". getUsername() . "/" . $filePath."'>";
+		   echo "<img id='userImg' src='". $filePath. "'>";
 		}
+		
 		else
 		{
-			echo "<iframe id='userFile' src='". getUsername() . "/" . $filePath . "'></iframe>";
+			echo "<iframe id='userFile' src='" . $filePath . "'></iframe>";
 		}
 	?>
 </section>
