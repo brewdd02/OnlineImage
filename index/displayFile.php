@@ -13,8 +13,8 @@
 		$sql = "SELECT fileLoc, mimeType FROM files WHERE id=" . $id;
 		$file = $conn->query($sql) or die(mysqli_error());
 		$row = $file->fetch_assoc();
-		
 		$fileType = $row['mimeType']; 
+		$fileCheck = explode('.', $row['fileLoc']);
 		
 		if(getOS())
 		{
@@ -26,7 +26,7 @@
 			$filePath = getUsername() . DIRECTORY_SEPARATOR . $row['fileLoc'];
 		}
 		
-		if ($fileType == "text/php")
+		if ($fileCheck[1] == "php")
 		{
 			$fileToShow = "admin/phpFile/show.txt";
 			copy($filePath, $fileToShow);
