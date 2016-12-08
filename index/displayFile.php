@@ -17,7 +17,14 @@
 		$fileType = $row['mimeType']; 
 		$filePath = $row['fileLoc']; 
 		
-		if ($fileType == "image/jpeg" || $fileType == "image/gif" || $fileType == "image/png")
+		if ($fileType == "text/php")
+		{
+			$fileToCopy = getUsername() . "/" . $filePath;
+			$fileToShow = "admin/phpFile/show.txt";
+			copy($fileToCopy, $fileToShow);
+			echo "<iframe id='userFile' src='" . $fileToShow . "'></iframe>";
+		}
+		else if ($fileType == "image/jpeg" || $fileType == "image/gif" || $fileType == "image/png")
 		{
 		   echo "<img id='userImg' src='". getUsername() . "/" . $filePath."'>";
 		}

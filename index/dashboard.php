@@ -2,6 +2,7 @@
 
 session_start();
 require_once('getUserFiles.php');
+require_once('connectToDb.php');
 	
 	
 	if (isset($_POST["logout"])){
@@ -28,11 +29,11 @@ require_once('getUserFiles.php');
 			<form method="post" action="dashboard.php">
 				<input id="logout" class="btn btn-primary" type="submit" name="logout" value="Log Out"/>
 			</form>
-			
+			<h2 id="welcomeUser">Nice of you to drop in today, <?php echo getUsername(); ?>!</h2>
 		</header>
 		<section style="table align: center;">
 			
-			<input id="search" type="search" class="form-control" placeholder="Search for files" style="border-radius: 12px;margin-bottom: 50px;margin-left: 80%">
+			<input id="search" type="search" class="form-control" placeholder="Search for files" style="border-radius: 12px;margin-top: 20px;margin-left: 80%">
 			<br>
 			<br>
 			

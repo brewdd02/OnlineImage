@@ -8,7 +8,7 @@ body {
 header {
 	background-color: #50565d;
 	padding-top: 10px;
-	padding-bottom: 125px;
+	padding-bottom: 155px;
 }
 
 header > input#logo {
@@ -74,7 +74,14 @@ section {
 	border-radius: 12px;
 	background-color: #50565d;
 }
-
+#welcomeUser{
+	color: white;
+	font-family: "Comic Sans MS", cursive, sans serif;
+	margin-top: 115px;
+	float: right;
+	padding-right: 1%;
+	
+}	
 #login {
 	text-align: center;
 	padding-left: 40%;

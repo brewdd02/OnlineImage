@@ -29,7 +29,8 @@
 		
 		if (file_exists($file))
 		{
-			die('File already exists!');
+			unlink($file);
+			move_uploaded_file($_FILES['file']['tmp_name'], $file);
 		}
 		
 		else
