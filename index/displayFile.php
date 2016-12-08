@@ -10,20 +10,21 @@
 		$conn = connect();
 		
 		$id = $_GET['file'];
-		$sql = "SELECT fileLoc, mimeType FROM files WHERE id=" . $id;
+		$sql = "SELECT username, fileLoc, mimeType FROM files WHERE id=" . $id;
 		$file = $conn->query($sql) or die(mysqli_error());
 		$row = $file->fetch_assoc();
+		$username = $row['username'];
 		$fileType = $row['mimeType']; 
 		$fileCheck = explode('.', $row['fileLoc']);
 		
 		if(getOS())
 		{
-			$filePath = getUsername() . "/" . $row['fileLoc']; 
+			$filePath = $username . "/" . $row['fileLoc']; 
 		}
 		
 		else
 		{
-			$filePath = getUsername() . DIRECTORY_SEPARATOR . $row['fileLoc'];
+			$filePath = $username . DIRECTORY_SEPARATOR . $row['fileLoc'];
 		}
 		
 		if ($fileCheck[1] == "php")
