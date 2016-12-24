@@ -1,7 +1,7 @@
 <?php 
+	require_once("connectToDb.php");
 	require("template/head.php");
 	require("template/header.php"); 
-	require_once("connectToDb.php");
 	session_start();
 ?>
 
